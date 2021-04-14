@@ -1,0 +1,79 @@
+<html>
+   <head>
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://fonts.googleapis.com/css2?family=Oldenburg&display=swap" rel="stylesheet">
+     <style>
+        h1
+        {
+          font-family: 'Oldenburg', cursive;
+          font-size: 40px;
+          color: brown;
+        }
+        #button:hover
+        {
+          background-color: white; color: brown;
+        }
+        body
+        {
+          background-color: #afd0e3;
+        }
+     </style>
+     <script>
+     function mile()
+     {
+        var x = document.getElementById("start").value;
+        x = parseInt(x);
+        var y = document.getElementById("end").value;
+        y = parseInt(y);
+        var result = 0;
+        var iteration = "Miles   ------    Furlongs  <br><hr><br>"
+        for(var i = x; i <= y; i++)
+        {
+          result = i * 8;
+          iteration = iteration + i + " miles: "+ result + " furlongs" + "<br>"
+        }
+        document.getElementById('result').innerHTML = iteration;
+     }
+     function slug()
+     {
+        var x = document.getElementById("start").value;
+        x = parseInt(x);
+        var y = document.getElementById("end").value;
+        y = parseInt(y);
+        var result = 0;
+        var iteration = "Slugs -------- Pounds <br><hr><br>"
+        for(var i = x; i <= y; i++)
+        {
+          result = i * 32.174;
+          iteration = iteration + i + " slugs: "+ result + " pounds" + "<br>"
+        }
+        document.getElementById('result').innerHTML = iteration;
+     }
+     function fort()
+     {
+        var x = document.getElementById("start").value;
+        x = parseInt(x);
+        var y = document.getElementById("end").value;
+        y = parseInt(y);
+        var result = 0;
+        var iteration = "Fortnights -------- Days <br><hr><br>"
+        for(var i = x; i <= y; i++)
+        {
+          result = i * 14;
+          iteration = iteration + i + " fortnights: "+ result + " days" + "<br>"
+        }
+        document.getElementById('result').innerHTML = iteration;
+     }
+     </script>
+   </head>
+ <body>
+     <h1>Old Time Conversion Calculator</h1>
+     <input type = "text" placeholder = "Start Value" id = "start">
+     <input type = "text" placeholder = "End Value" id = "end">
+     <input id = button type = "button" value = "Miles to Furlongs" onclick = "mile()">
+     <input id = button type = "button" value = "Slugs to Pounds" onclick = "slug()">
+     <input id = button type = "button" value = "Fortnights to Days" onclick = "fort()">
+     <img src = "pic1.png" height= "20%" width= "20%">
+     <p id = "result"></p>
+  </body>
+</html>
